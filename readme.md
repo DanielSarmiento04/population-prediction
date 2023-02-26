@@ -63,6 +63,15 @@ Or using anaconda
  ```
 
 
+4. Visualize the data ProyeccionMunicipios2005_2020.xls
+
+In more cases is important see the documentation, what kind of data is available here.
+
+> The xls contains 2 important columns Municipios and Departamentos.
+
+5. Generate sample population. (First.ipynb)
+
+
 
 # Referencias
 [Manipulation Excel municipios](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html)
