@@ -61,14 +61,15 @@ Or using anaconda
  ```
 
 
-4. Visualize the data ProyeccionMunicipios2005_2020.xls
+4. Visualize the data mun/ProyeccionMunicipios2005_2020.xls
 
 In more cases is important see the documentation, what kind of data is available here.
 
 > The xls contains 2 important columns Municipios and Departamentos.
 
-5. Generate sample population. (First.ipynb)
+5. Generate sample population. (mun/First.ipynb)
 
+6. (Optional) in the folder Colombia is generated the same process for the population
 
 
 # Referencias
