@@ -18,8 +18,6 @@ note that the document has data from a wide variety of municipalities, for pract
 
 ## Steps
 
-
-
 1. Create virtual enviaroments:
 
     Win
@@ -79,3 +77,5 @@ In more cases is important see the documentation, what kind of data is available
 [Data Colombia](https://datosmacro.expansion.com/demografia/poblacion/colombia)
 
 [Manipulation pandas](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html)
+
+[Methods arithmetic](https://ccp.ucr.ac.cr/cursos/demografia_03/materia/5_crecimiento.htm)
