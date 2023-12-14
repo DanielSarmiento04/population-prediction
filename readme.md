@@ -9,12 +9,14 @@ tags :
  - prediction
 ---
 
-# Population Prediction
-
-This repository contains the analysis of growth/decrease in a real population, The information was extracted from the public source of the [DANE](https://www.dane.gov.co) the document extracted is ProyeccionMunicipios2005_2020.xls
+# **Population Prediction**
 
 
-note that the document has data from a wide variety of municipalities, for practical purposes the analysis will be carried out on the municipality of gramalote
+## Resumen
+
+The objective of this repository is make a research about growth/decrease population using some data analysis techniques. To do it We use the oficial data provided by [DANE](https://www.dane.gov.co), that is the oficial entity responsible for the planning, collection, processing, analysis and dissemination of official statistics of Colombia.
+
+> The dataset can be accessed by the follow [link](https://www.dane.gov.co/files/investigaciones/poblacion/proyepobla06_20/ProyeccionMunicipios2005_2020.xls)
 
 ## Steps
 
@@ -72,8 +74,11 @@ In more cases is important see the documentation, what kind of data is available
 6. (Optional) in the folder Colombia is generated the same process for the population
 
 
-# Referencias
-[Data Colombian municipalities](https://www.dane.gov.co/files/investigaciones/poblacion/proyepobla06_20/ProyeccionMunicipios2005_2020.xls)
+## Referencias
+
+[1] 
+
+<!-- [Data Colombian municipalities](https://www.dane.gov.co/files/investigaciones/poblacion/proyepobla06_20/ProyeccionMunicipios2005_2020.xls) -->
 
 [Data Colombia](https://datosmacro.expansion.com/demografia/poblacion/colombia)
 
