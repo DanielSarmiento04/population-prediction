@@ -18,49 +18,21 @@ The objective of this repository is make a research about growth/decrease popula
 
 > The dataset can be accessed by the follow [link](https://www.dane.gov.co/files/investigaciones/poblacion/proyepobla06_20/ProyeccionMunicipios2005_2020.xls)
 
-## Steps
 
-1. Create virtual enviaroments:
+## Table of contents
+1. [Set Up](#set-up)
 
-    Win
- ```
- python -m venv .venv
- ```
-linux/MacOs
- ```
- python3 -m virtualenv .venv
- ```
-Or using anaconda 
- ```
- conda create --name .venv python=3.10
- ```
+## Set Up
 
-2. Activate the virtual environment
+Create the python environment and download the necessary dependencies
 
-    Win
- ```
- .venv/Scripts/activate
- ```
- linux/MacOs
- ```
- source .venv/bin/activate
- ```
-Or using anaconda 
- ```
- conda ativate .venv
- ```
-
-3. Download the requirements  from requirements.txt if you are in windows or Linux and
+```
+    conda create --name populations python=3.10 y
+    conda ativate populations
+    pip install -r requirements.txt
+```
 
 
-    Win/Conda
- ```
- python -m pip install -r requirements.txt
- ```
- MacOs/Linux
- ```
- python3 -m pip install -r requirements.txt
- ```
 
 
 4. Visualize the data mun/ProyeccionMunicipios2005_2020.xls
