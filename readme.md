@@ -28,9 +28,9 @@ The objective of this repository is make a research about growth/decrease popula
 Create the python environment and download the necessary dependencies
 
 ```
-    conda create --name populations python=3.10 -y
-    conda activate populations
-    pip install -r requirements.txt
+conda create --name populations python=3.10 -y
+conda activate populations
+pip install -r requirements.txt
 ```
 
 
