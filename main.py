@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 
+from methods.linear import Linear
+from drawer.drawer import Drawer
+
 # Declare the path csv path and sheet name
 path = "API_SP.POP.TOTL_DS2_en_csv_v2_6224560.csv"
 
@@ -42,24 +45,10 @@ years_populations = country_selected \
                     # .astype(np.int128)
 
 # Create a Plotly figure
-fig = go.Figure()
-
-# Add a trace for the line graph
-fig.add_trace(
-    go.Scatter(
-        x = years_populations.index.to_list(),
-        y =  years_populations.to_list(),
-        mode='lines+markers',
-        name='Data'
-    )
-)
-
-# Update layout
-fig.update_layout(
-    title='Population of ' + country_name,
-    xaxis_title='years',
-    yaxis_title='Numbers of people',
-    # bargap=0.1  # Space between bars
+fig = Drawer.draw_data(
+    x=years_populations.index,
+    y=years_populations,
+    country=country_name
 )
 
 
@@ -96,5 +85,24 @@ $$ y = m x + b $$
 st.image(
     'https://ccp.ucr.ac.cr/cursos/demografia_03/Imagenes/quinta4.gif',
     caption='Interpolation linear',
-    
+
+)
+
+
+df_linear = Linear.calcule(
+    populations=years_populations.to_numpy().astype(int),
+    years=years_populations.index.to_numpy().astype(int),
+    data_predicted=np.array([2020, 2021, 2022, 2023, 2024, 2025])
+)
+
+fig = Drawer.draw_data(
+    x=np.array([2020, 2021, 2022, 2023, 2024, 2025]),
+    y=df_linear,
+    country=country_name
+)
+
+
+st.plotly_chart(
+    fig,
+    use_container_width=True
 )
