@@ -43,6 +43,10 @@ The algorithm are design to work with some tendency, but for developer reason we
 
 ## Algorithms
 
+### Linear growth 
+
+
+
 
 ## References
 

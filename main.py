@@ -13,10 +13,7 @@ df = pd.read_csv(
     skiprows=4
 )
 
-st.write("""
-# Prediction Populations
-
-""")
+st.title('Population Prediction')
 
 
 st.dataframe(
@@ -32,8 +29,10 @@ option = st.selectbox(
     index=248
 )
 
+index = country_available[country_available == option].index[0]
+
 # Get the specific country
-country_selected = df.iloc[248, ]
+country_selected = df.iloc[index, ]
 
 # Get the country name
 country_name = country_selected.iloc[0]
@@ -59,10 +58,9 @@ fig.add_trace(
 fig.update_layout(
     title='Population of ' + country_name,
     xaxis_title='years',
-    yaxis_title='Millions of people',
+    yaxis_title='Numbers of people',
     # bargap=0.1  # Space between bars
 )
-
 
 
 
@@ -70,3 +68,16 @@ st.plotly_chart(
     fig,
     use_container_width=True
 )
+
+
+st.subheader('Alhorithms')
+
+
+
+# linear interpolation
+
+st.subheader('Linear interpolation')
+st.write('''
+
+
+''')
