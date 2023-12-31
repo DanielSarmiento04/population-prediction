@@ -35,6 +35,18 @@ conda activate populations
 pip install -r requirements.txt
 ```
 
+```
+streamlit run main.py
+```
+
+Run using Docker
+
+```
+docker build -t populations:2 . 
+
+docker run -d --name populations_container populations:2
+```
+
 
 ## Selected population (Ukraine)
 
