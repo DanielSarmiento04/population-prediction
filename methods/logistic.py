@@ -18,14 +18,19 @@ class Logistic():
                 populations: A numpy array with the populations data
                 years: A numpy array with the years data
         '''
-        def modelo_logistic(t, M, k, c):
+        def modelo_logistic(t, M, k, c, A):
             '''
                 Schema for the model logistic
             '''
-            return M / (1 + k * np.exp(-c * t))
+            return M / (1 + k * np.exp(-c * t)) + A
 
 
-        popt, pcov = curve_fit(modelo_logistic, years, populations)
+        popt, pcov = curve_fit(
+            modelo_logistic, 
+            years, 
+            populations,
+        )
+        print(popt)
     
         new_population = modelo_logistic(data_predicted, *popt)
 
