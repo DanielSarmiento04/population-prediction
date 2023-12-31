@@ -3,7 +3,12 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 
-from methods.linear import Linear
+from methods import (
+    Linear,
+    Gradient,
+    Logistic
+)
+
 from drawer.drawer import Drawer
 
 # Declare the path csv path and sheet name
@@ -61,7 +66,7 @@ st.plotly_chart(
 
 st.subheader('Alhorithms')
 
-
+data_predicted = np.arange(2020, 2050, dtype=int)
 
 # linear interpolation
 
@@ -82,27 +87,74 @@ $$ y = m x + b $$
 - b is the y-intercept (the value of  y when  x x is zero).
 ''')
 
-st.image(
-    'https://ccp.ucr.ac.cr/cursos/demografia_03/Imagenes/quinta4.gif',
-    caption='Interpolation linear',
+left_co, cent_co, last_co = st.columns(3)
 
-)
+with cent_co: 
+    st.image(
+        'https://ccp.ucr.ac.cr/cursos/demografia_03/Imagenes/quinta4.gif',
+        caption='Interpolation linear',
+    )
 
 
 df_linear = Linear.calcule(
     populations=years_populations.to_numpy().astype(int),
     years=years_populations.index.to_numpy().astype(int),
-    data_predicted=np.array([2020, 2021, 2022, 2023, 2024, 2025])
+    data_predicted=data_predicted
 )
 
-fig = Drawer.draw_data(
-    x=np.array([2020, 2021, 2022, 2023, 2024, 2025]),
+fig_linear = Drawer.draw_data(
+    x=data_predicted,
     y=df_linear,
     country=country_name
 )
 
 
 st.plotly_chart(
-    fig,
+    fig_linear,
+    use_container_width=True
+)
+
+
+# Geometric gradient (exponential method)
+st.subheader('Geometric gradient (exponential method)')
+
+
+df_gradient = Gradient.calcule(
+    populations=years_populations.to_numpy().astype(int),
+    years=years_populations.index.to_numpy().astype(int),
+    data_predicted=data_predicted
+)
+
+fig_gradient = Drawer.draw_data(
+    x=data_predicted,
+    y=df_gradient,
+    country=country_name
+)
+
+st.plotly_chart(
+    fig_gradient,
+    use_container_width=True
+)
+
+
+
+# Geometric gradient (exponential method)
+st.subheader('Logistic method')
+
+
+df_logistic = Logistic.calcule(
+    populations=years_populations.to_numpy().astype(int),
+    years=years_populations.index.to_numpy().astype(int),
+    data_predicted=data_predicted
+)
+
+fig_logistic = Drawer.draw_data(
+    x=data_predicted,
+    y=df_logistic,
+    country=country_name
+)
+
+st.plotly_chart(
+    fig_logistic,
     use_container_width=True
 )
