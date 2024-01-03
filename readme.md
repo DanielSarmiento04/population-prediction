@@ -135,3 +135,6 @@ Where:
 
 
 [2] Khan Academy (no date) Linear and exponential growth | Lesson (article), Khan Academy. Available at: https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:untitled-652/x0a8c2e5f:problem-solving-and-data-analysis-lessons-by-skill/a/gtp--sat-math--article--linear-and-exponential-growth--lesson (Accessed: 19 December 2023). 
+
+
+[3] Braunschweig, D. (no date) Numerical Analysis/Vandermonde example, Wikiversity. Available at: https://en.wikiversity.org/wiki/Numerical_Analysis/Vandermonde_example (Accessed: 03 January 2024). 
