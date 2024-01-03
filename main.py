@@ -6,7 +6,8 @@ import plotly.graph_objects as go
 from methods import (
     Linear,
     Gradient,
-    Logistic
+    Logistic,
+    Vandermonde
 )
 
 from drawer.drawer import Drawer
@@ -47,7 +48,7 @@ country_name = country_selected.iloc[0]
 
 years_populations = country_selected \
                     .iloc[4: -1] \
-                    # .astype(np.int128)
+                    .astype(int)
 
 # Create a Plotly figure
 fig = Drawer.draw_data(
@@ -66,7 +67,7 @@ st.plotly_chart(
 
 st.subheader('Alhorithms')
 
-data_predicted = np.arange(2020, 2050, dtype=int)
+data_predicted = np.arange(2020, 2030, dtype=int)
 
 # linear interpolation
 
@@ -206,5 +207,30 @@ fig_logistic = Drawer.draw_data(
 
 st.plotly_chart(
     fig_logistic,
+    use_container_width=True
+)
+
+
+# Geometric gradient (exponential method)
+st.subheader('Vandermonde method')
+st.write('''
+The Vandermonde method is a method for solving a system of linear equations. It is named after Alexandre-Théophile Vandermonde.
+''')
+
+
+df_vandermonde = Vandermonde.calcule(
+    populations=years_populations.to_numpy().astype(int),
+    years=years_populations.index.to_numpy().astype(int),
+    data_predicted=data_predicted
+)
+
+fig_vandermonde = Drawer.draw_data(
+    x=data_predicted,
+    y=df_vandermonde,
+    country=country_name
+)
+
+st.plotly_chart(
+    fig_vandermonde,
     use_container_width=True
 )
