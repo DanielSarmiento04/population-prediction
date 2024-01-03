@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Set a specific background color */
+        body {
+            background-color: #f0f0f0;
+            /* Replace with your preferred color code */
+        }
+
+        /* Adjust text color for better contrast */
+        body {
+            color: #333;
+            /* Adjust text color as needed for readability */
+        }
+
+        /* Basic styling for headings */
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        /* Styling for paragraphs */
+        p {
+            line-height: 1.5;
+            margin-bottom: 1em;
+        }
+
+        /* Styling for lists */
+        ul,
+        ol {
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Styling for links */
+        a {
+            color: #007bff;
+            /* Change link color as needed */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Style for equations */
+        .equation {
+            font-size: 1.2em;
+            /* Adjust font size */
+            color: #ff6347;
+            /* Change color as desired */
+            font-style: italic;
+            /* Apply italic style */
+            text-align: center;
+            /* Center-align the equation */
+            /* Add any other styles you want for equations */
+        }
+
+        /* Apply margin to the entire document */
+        body {
+            margin: 20px;
+            /* Adjust the margin size as needed */
+        }
+
+        /* Apply margin to paragraphs */
+        p {
+            margin-bottom: 15px;
+            /* Adjust the bottom margin of paragraphs */
+        }
+
+        /* Style for code blocks */
+        code {
+            display: block;
+            padding: 10px;
+            background-color: #f4f4f4;
+            /* Background color for code blocks */
+            border-radius: 5px;
+            overflow-x: auto;
+            /* Enable horizontal scroll for long lines */
+            margin-bottom: 15px;
+            /* Bottom margin for code blocks */
+        }
+
+        pre {
+            margin-bottom: 15px;
+            /* Bottom margin for code blocks */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <hr>
+    <p>title : Predicción de poblaciones.
+        date : 2023-02-25
+        excerpt : Porfolio
+        description : Estimación de una población
+        tags :</p>
+    <ul>
+        <li>python</li>
+        <li>pandas</li>
+        <li>prediction</li>
+    </ul>
+    <hr> -->
+
+
+    <h1 id="-population-prediction-"><strong>Population Prediction</strong></h1>
+    <h2 id="resumen">Resumen</h2>
+    <p>The objective of this repository is make a research about growth/decrease population using some data analysis
+        techniques. To do it We use the oficial data provided by <a
+            href="https://data.worldbank.org/indicator/SP.POP.TOTL?end=2022&amp;locations=BM&amp;start=1960&amp;view=chart">The
+            world bank</a> is an international financial institution that provides loans and grants to governments of
+        low- and middle-income countries for various development purposes, its mission is to help developing countries
+        achieve sustainable growth by financing investment, mobilizing capital in international financial markets, and
+        providing advisory services</p>
+    <blockquote>
+        <p>The dataset can be accessed by the follow <a
+                href="https://www.dane.gov.co/files/investigaciones/poblacion/proyepobla06_20/ProyeccionMunicipios2005_2020.xls">link</a>
+        </p>
+    </blockquote>
+    <h2 id="table-of-contents">Table of contents</h2>
+    <ol>
+        <li><a href="#set-up">Set Up</a></li>
+        <li><a href="#selected-population">Selected population</a></li>
+        <li><a href="#algorithms">Algorithms</a></li>
+    </ol>
+    <h2 id="set-up">Set Up</h2>
+    <p>Create the python environment and download the necessary dependencies</p>
+    <pre><code>conda <span class="hljs-keyword">create</span> <span class="hljs-comment">--name populations python=3.10 -y</span>
+conda <span class="hljs-keyword">activate</span> populations
+pip <span class="hljs-keyword">install</span> -r requirements.txt
+</code></pre>
+    <pre><code>streamlit <span class="hljs-keyword">run</span><span class="bash"> main.py</span>
+</code></pre>
+    <p>Run using Docker</p>
+    <pre><code><span class="hljs-symbol">docker</span> <span class="hljs-keyword">build </span>-t <span class="hljs-keyword">populations:2 </span>. 
+
+<span class="hljs-symbol">docker</span> run -d --name <span class="hljs-keyword">populations_container </span><span class="hljs-keyword">populations:2</span>
+</code></pre>
+    <h2 id="selected-population-ukraine-">Selected population (Ukraine)</h2>
+    <p>The algorithm are design to work with some tendency, but for developer reason we selected Ukraine as the default
+        population</p>
+    <h2 id="algorithms">Algorithms</h2>
+    <h3 id="linear-growth">Linear growth</h3>
+    <p>Linear growth refers to a steady and consistent increase or progression over time where the change occurs at a
+        constant rate. In this type of growth, the relationship between the input and output variables remains
+        proportional.</p>
+    <p>In a linear growth scenario, if you were to graph the relationship between time (or any independent variable) on
+        the x-axis and the quantity or value (dependent variable) on the y-axis, the resulting graph would be a straight
+        line. This line would have a constant slope, indicating that for every unit increase in the independent
+        variable, there is a constant increase or decrease in the dependent variable.</p>
+    <p>Mathematically, linear growth can be represented by an equation in the form of </p>
+    <p class="equation">y = m x + b </p>
+    <ul>
+        <li>y is the dependent variable,</li>
+        <li>x is the independent variable,</li>
+        <li>m is the slope of the line (representing the rate of change),</li>
+        <li>b is the y-intercept (the value of y when x x is zero).</li>
+    </ul>
+    <p align="center">
+        <img src="https://ccp.ucr.ac.cr/cursos/demografia_03/Imagenes/quinta4.gif" height="300px">
+    </p>
+
+
+    <h3 id="geometric-gradient-exponential-method-">Geometric gradient (exponential method)</h3>
+    <p>Gradient growth, often referred to as exponential growth, signifies a pattern where the rate of increase of a
+        quantity is proportional to its current value. In simple terms, it&#39;s growth at a compounding or accelerating
+        rate, where the larger the current value, the faster it grows over time.</p>
+    <p>Unlike linear growth, where the increase is constant and steady, gradient growth demonstrates an accelerating or
+        decelerating rate of change. When plotted on a graph, this type of growth results in a curve that steepens or
+        flattens out, showcasing rapid expansion over time.</p>
+    <p>Mathematically, gradient growth can be represented by an exponential function, often in the form of $ y = a * b^x
+        $, where:</p>
+    <ul>
+        <li>
+            <p>y represents the final value or quantity,</p>
+        </li>
+        <li>
+            <p>a is the initial value or quantity,</p>
+        </li>
+        <li>
+            <p>b is the growth factor or rate,</p>
+        </li>
+        <li>
+            <p>x is time or the number of periods.</p>
+        </li>
+    </ul>
+    <p align="center">
+        <img src="https://ccp.ucr.ac.cr/cursos/demografia_03/Imagenes/quinta12.gif" height="300px">
+    </p>
+
+    <h3 id="logistic-method">Logistic method</h3>
+    <p>Logistic growth represents a type of growth pattern where a population or a quantity initially experiences
+        exponential or rapid growth, but eventually reaches a point where growth slows down and stabilizes. This pattern
+        is often described as an S-shaped curve.</p>
+    <p>In logistic growth, the population or quantity starts with a period of rapid increase when resources are
+        abundant. However, as the population approaches a certain limit or carrying capacity - the maximum population
+        size that the environment can sustain - the growth rate gradually slows down. Eventually, the population
+        stabilizes near the carrying capacity, resulting in a relatively constant population size.</p>
+    <p>Mathematically, logistic growth is described using the logistic equation, which can be represented as:</p>
+    <p>$$ P(t) = \frac {K}{1 + e^{-r * t}} $$</p>
+    <p>Where:</p>
+    <ul>
+        <li>
+            <p>P(t) represents the population (or quantity) at time.</p>
+        </li>
+        <li>
+            <p>K is the carrying capacity or the maximum population size the environment can sustain.</p>
+        </li>
+        <li>
+            <p>r is the growth rate of the population.</p>
+        </li>
+        <li>
+            <p>e is the base of the natural logarithm.</p>
+        </li>
+        <li>
+            <p>t is time.</p>
+        </li>
+    </ul>
+    <h2 id="references">References</h2>
+    <p>[1] The world bank (no date) Population, total - ukraine, World Bank Open Data. Available at: <a
+            href="https://data.worldbank.org/indicator/SP.POP.TOTL?end=2022&amp;locations=UA&amp;start=1960">https://data.worldbank.org/indicator/SP.POP.TOTL?end=2022&amp;locations=UA&amp;start=1960</a>
+        (Accessed: 14 December 2023). </p>
+    <p>[2] Khan Academy (no date) Linear and exponential growth | Lesson (article), Khan Academy. Available at: <a
+            href="https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:untitled-652/x0a8c2e5f:problem-solving-and-data-analysis-lessons-by-skill/a/gtp--sat-math--article--linear-and-exponential-growth--lesson">https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:untitled-652/x0a8c2e5f:problem-solving-and-data-analysis-lessons-by-skill/a/gtp--sat-math--article--linear-and-exponential-growth--lesson</a>
+        (Accessed: 19 December 2023). </p>
+    <p>[3] Braunschweig, D. (no date) Numerical Analysis/Vandermonde example, Wikiversity. Available at: <a
+            href="https://en.wikiversity.org/wiki/Numerical_Analysis/Vandermonde_example">https://en.wikiversity.org/wiki/Numerical_Analysis/Vandermonde_example</a>
+        (Accessed: 03 January 2024). </p>
+
+</body>
+
+</html>

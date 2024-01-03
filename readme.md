@@ -22,7 +22,7 @@ The objective of this repository is make a research about growth/decrease popula
 
 ## Table of contents
 1. [Set Up](#set-up)
-2. [Selected population](#selected-population)
+2. [Selected population](#selected-population-ukraine)
 3. [Algorithms](#algorithms)
 
 ## Set Up
